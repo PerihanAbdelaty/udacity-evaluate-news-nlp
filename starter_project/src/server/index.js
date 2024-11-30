@@ -11,14 +11,18 @@ const cors = require('cors');
 app.use(cors());
 app.use(bodyParser.json());
 
+app.use(express.static('dist'))
+
 console.log(__dirname);
+
+
 
 // Variables for url and api key
 
 
 app.get('/', function (req, res) {
-    res.send("This is the server API page, you may access its services via the client app.");
-});
+    res.sendFile('dist/index.html')
+    })
 
 
 // POST Route
